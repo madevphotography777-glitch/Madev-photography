@@ -174,3 +174,17 @@ footer .copyright{margin-top:25px;letter-spacing:0}
   color:#cfcfcf;
   line-height:1.7;
 }
+
+/* Distinct package backgrounds */
+.package.platinum{
+  background:linear-gradient(145deg,#17130a 0%,#0b0b0b 55%,#1d1708 100%);
+  border:2px solid #d4af37;
+}
+.package:not(.platinum):not(.diamond):not(.bronze):not(.silver){
+  background:linear-gradient(145deg,#181208 0%,#0b0b0b 55%,#211707 100%);
+  border:1px solid #b8860b;
+}
+.package.platinum .package-badge{
+  background:linear-gradient(135deg,#fff1a8,#d4af37,#9a7415);
+  color:#111;
+}
