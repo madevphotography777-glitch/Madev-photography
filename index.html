@@ -14,7 +14,7 @@
   <a href="tel:9940326030" class="call-btn">📞 Call Now</a>
 </header>
 
-<section class="hero">
+<section class="hero" id="home">
   <div class="hero-content">
     <p class="small-title">CAPTURE YOUR MOMENTS</p>
     <h1>MADEV<span>Photography</span></h1>
@@ -79,12 +79,87 @@
   </div>
 </section>
 
-<section class="gallery">
-  <p class="section-label">OUR WORK</p><h2>Beautiful Moments</h2>
-  <div class="gallery-grid"><div class="gallery-box">Wedding</div><div class="gallery-box">Candid</div><div class="gallery-box">Reception</div><div class="gallery-box">Outdoor</div></div>
+
+<section class="gallery" id="our-works">
+  <p class="section-label">OUR WORKS</p>
+  <h2>Our Works</h2>
+  <p class="works-intro">Our photography and videography will be displayed here.</p>
+  <div class="gallery-grid works-grid">
+    <div class="gallery-box photo-placeholder">Your Photos<br>Coming Soon</div>
+    <div class="gallery-box photo-placeholder">Your Photos<br>Coming Soon</div>
+    <div class="gallery-box photo-placeholder">Your Photos<br>Coming Soon</div>
+    <div class="gallery-box photo-placeholder">Your Photos<br>Coming Soon</div>
+  </div>
 </section>
 
-<section class="contact">
+
+
+<section class="reviews" id="reviews">
+  <p class="section-label">CUSTOMER REVIEWS</p>
+  <h2>Reviews</h2>
+  <p class="reviews-intro">We would love to hear about your experience with MADEV Photography &amp; Videography.</p>
+
+  <form class="review-form" id="reviewForm">
+    <input id="reviewName" type="text" placeholder="Your name" maxlength="60" required>
+    <select id="reviewRating" required>
+      <option value="">Choose a rating</option>
+      <option value="5">★★★★★ — 5</option>
+      <option value="4">★★★★☆ — 4</option>
+      <option value="3">★★★☆☆ — 3</option>
+      <option value="2">★★☆☆☆ — 2</option>
+      <option value="1">★☆☆☆☆ — 1</option>
+    </select>
+    <textarea id="reviewText" placeholder="Write your review..." maxlength="500" required></textarea>
+    <button type="submit">Submit Review</button>
+  </form>
+
+  <div id="reviewsList" class="reviews-list"></div>
+</section>
+
+<script>
+(function () {
+  const form = document.getElementById('reviewForm');
+  const list = document.getElementById('reviewsList');
+  const key = 'madev_customer_reviews';
+
+  function renderReviews() {
+    const reviews = JSON.parse(localStorage.getItem(key) || '[]');
+    list.innerHTML = reviews.map(function (r) {
+      return '<article class="review-card">' +
+        '<div class="review-head"><strong>' + escapeHtml(r.name) + '</strong><span>' + '★'.repeat(r.rating) + '</span></div>' +
+        '<p>' + escapeHtml(r.text) + '</p>' +
+        '</article>';
+    }).join('');
+
+    if (!reviews.length) {
+      list.innerHTML = '<p class="no-reviews">Be the first customer to leave a review.</p>';
+    }
+  }
+
+  function escapeHtml(value) {
+    return value.replace(/[&<>"']/g, function (c) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c];
+    });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const reviews = JSON.parse(localStorage.getItem(key) || '[]');
+    reviews.unshift({
+      name: document.getElementById('reviewName').value.trim(),
+      rating: Number(document.getElementById('reviewRating').value),
+      text: document.getElementById('reviewText').value.trim()
+    });
+    localStorage.setItem(key, JSON.stringify(reviews.slice(0, 50)));
+    form.reset();
+    renderReviews();
+  });
+
+  renderReviews();
+})();
+</script>
+
+<section class="contact" id="contact">
   <p class="section-label">GET IN TOUCH</p><h2>Let's Capture Your Moments</h2>
   <p>Contact MADEV Photography &amp; Videography for bookings and enquiries.</p>
   <div class="contact-buttons">
@@ -96,6 +171,15 @@
 
 <footer><div class="footer-logo">MADEV Photography</div><p>CAPTURE YOUR MOMENTS</p><p class="copyright">© 2026 MADEV Photography &amp; Videography. All Rights Reserved.</p></footer>
 <a class="whatsapp" href="https://wa.me/919940326030" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+
+<nav class="taskbar" aria-label="Website navigation">
+  <a href="#home">⌂<span>Home</span></a>
+  <a href="#packages">▣<span>Packages</span></a>
+  <a href="#our-works">📸<span>Our Works</span></a>
+  <a href="#reviews">★<span>Reviews</span></a>
+  <a href="#contact">☎<span>Contact</span></a>
+</nav>
 
 </body>
 </html>

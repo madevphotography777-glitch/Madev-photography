@@ -7,3 +7,43 @@ section{padding:80px 7%}.section-label{color:#f4c542;letter-spacing:5px;font-siz
 footer{text-align:center;padding:40px 20px;background:#000;border-top:1px solid #33260e}.footer-logo{font-size:25px;font-weight:bold;color:#f4c542}footer p{color:#aaa;letter-spacing:3px;font-size:11px;margin-top:8px}footer .copyright{margin-top:25px;letter-spacing:0}.whatsapp{position:fixed;right:20px;bottom:20px;width:58px;height:58px;display:flex;justify-content:center;align-items:center;background:#25d366;border-radius:50%;text-decoration:none;font-size:28px;box-shadow:0 5px 20px rgba(0,0,0,.5);z-index:999}
 @media(max-width:768px){.header{padding:12px 5%}.logo-main{font-size:21px}.logo-sub{font-size:7px;letter-spacing:3px}.call-btn{padding:8px 12px;font-size:12px}.hero{min-height:80vh;padding:60px 20px}.small-title{letter-spacing:4px}.hero h2{letter-spacing:5px}section{padding:60px 5%}.service-grid{grid-template-columns:1fr 1fr}.service-card{padding:22px 12px}.package-top{padding:20px}.package-name{font-size:21px}.package-price{font-size:20px}.package-content{padding:20px}.package-btn{margin:0 20px 20px}.gallery-grid{grid-template-columns:1fr}.gallery-box{height:200px}}
 @media(max-width:450px){.service-grid{grid-template-columns:1fr}.hero h1{font-size:58px}.hero h1 span{font-size:25px}.hero h2{font-size:18px;letter-spacing:4px}.package-top{flex-direction:column;gap:5px;text-align:center}.contact-buttons{flex-direction:column}.contact-buttons a{width:100%}}
+
+/* TASKBAR */
+.taskbar{
+  position:fixed;left:50%;bottom:12px;transform:translateX(-50%);
+  z-index:2000;width:min(680px,94%);display:flex;justify-content:space-around;
+  align-items:center;padding:9px 8px;background:rgba(10,10,10,.96);
+  border:1px solid #5b4212;border-radius:22px;box-shadow:0 10px 35px rgba(0,0,0,.65);
+  backdrop-filter:blur(12px);
+}
+.taskbar a{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:70px;
+  color:#d8d8d8;text-decoration:none;font-size:19px;padding:5px 8px;border-radius:14px}
+.taskbar a span{font-size:10px;letter-spacing:.3px}
+.taskbar a:hover,.taskbar a:focus{color:#f4c542;background:#1b160b}
+body{padding-bottom:75px}
+
+/* REVIEWS */
+.reviews{background:#0b0b0b;text-align:center}
+.reviews-intro,.works-intro{max-width:650px;margin:0 auto 30px;color:#aaa}
+.review-form{max-width:650px;margin:0 auto 40px;display:grid;gap:12px;text-align:left}
+.review-form input,.review-form select,.review-form textarea{
+  width:100%;padding:14px 16px;border:1px solid #3a2a0d;border-radius:12px;
+  background:#151515;color:#fff;font:inherit;outline:none
+}
+.review-form textarea{min-height:130px;resize:vertical}
+.review-form input:focus,.review-form select:focus,.review-form textarea:focus{border-color:#f4c542}
+.review-form button{border:0;padding:14px;border-radius:28px;background:linear-gradient(135deg,#f7d866,#c27d0b);color:#000;font-weight:bold;font-size:15px;cursor:pointer}
+.reviews-list{max-width:800px;margin:auto;display:grid;gap:15px;text-align:left}
+.review-card{padding:20px;background:#151515;border:1px solid #34270f;border-radius:15px}
+.review-head{display:flex;justify-content:space-between;gap:15px;margin-bottom:8px}
+.review-head span{color:#f4c542;letter-spacing:2px}
+.review-card p{color:#ccc}
+.no-reviews{text-align:center;color:#777}
+.photo-placeholder{font-size:18px;line-height:1.5;text-align:center}
+
+@media(max-width:450px){
+  .taskbar{bottom:7px;padding:7px 3px}
+  .taskbar a{min-width:55px;font-size:17px;padding:4px}
+  .taskbar a span{font-size:8px}
+  body{padding-bottom:68px}
+}
