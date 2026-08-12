@@ -43,6 +43,15 @@ section h2{text-align:center;font-size:clamp(30px,5vw,50px);margin-bottom:20px}
 .included h4,.complimentary h4{color:#f4c542;margin-bottom:10px;letter-spacing:2px}
 .included p,.complimentary p{color:#bbb;font-size:14px}
 .package-btn{display:block;margin:0 30px 30px;padding:15px;text-align:center;text-decoration:none;color:#000;background:linear-gradient(135deg,#f7d866,#c27d0b);border-radius:30px;font-weight:bold}
+
+.package{position:relative}
+.package-badge{position:absolute;top:12px;right:18px;z-index:2;padding:9px 18px;border-radius:30px;font-size:13px;font-weight:900;letter-spacing:1.5px;box-shadow:0 6px 20px rgba(0,0,0,.45)}
+.best-value{background:linear-gradient(135deg,#fff6b7,#f4c542,#bd7b0d);color:#111;font-size:16px;padding:11px 22px}
+.affordable{background:linear-gradient(135deg,#d8d8d8,#8e8e8e);color:#111}
+.bronze .package-top{background:linear-gradient(135deg,#e2a56a,#9b5424)}
+.silver .package-top{background:linear-gradient(135deg,#eeeeee,#9f9f9f)}
+.silver .package-name{color:#111}
+
 .platinum .package-top{background:linear-gradient(135deg,#eeeeee,#929292)}
 .platinum .package-name{color:#111}
 .diamond .package-top{background:linear-gradient(135deg,#fff4ae,#d39a24)}
@@ -129,4 +138,39 @@ footer .copyright{margin-top:25px;letter-spacing:0}
   .nav-pullup{bottom:6px;width:calc(100% - 12px)}
   .nav-handle{padding:7px 18px 6px}
   .whatsapp{right:12px;bottom:12px;width:52px;height:52px;font-size:24px}
+}
+
+@media(max-width:768px){.package-badge{top:8px;right:10px;padding:7px 12px;font-size:10px}.best-value{font-size:12px;padding:8px 14px}}
+
+/* Our Works - Coming Soon */
+.coming-soon-card{
+  max-width:850px;
+  margin:35px auto 10px;
+  min-height:300px;
+  padding:55px 30px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  border:1px solid #6d4d13;
+  border-radius:24px;
+  background:linear-gradient(145deg,rgba(20,20,20,.96),rgba(8,8,8,.98));
+  box-shadow:0 18px 45px rgba(0,0,0,.4);
+}
+.coming-soon-icon{
+  font-size:52px;
+  margin-bottom:15px;
+}
+.coming-soon-card h3{
+  margin:0 0 12px;
+  font-size:34px;
+  letter-spacing:4px;
+  color:#f4c542;
+}
+.coming-soon-card p{
+  max-width:600px;
+  margin:0;
+  color:#cfcfcf;
+  line-height:1.7;
 }
