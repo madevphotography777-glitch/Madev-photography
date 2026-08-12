@@ -151,15 +151,12 @@
 
 <a class="whatsapp" href="https://wa.me/919940326030" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
-<nav class="taskbar" aria-label="Website navigation">
-  <a href="#home">⌂<span>Home</span></a>
-  <a href="#services">✦<span>Services</span></a>
-  <a href="#packages">▣<span>Packages</span></a>
-  <a href="#our-works">📸<span>Our Works</span></a>
-  <a href="offers.html">🎁<span>Offers</span></a>
-  <a href="#reviews">★<span>Reviews</span></a>
-  <a href="#contact">☎<span>Contact</span></a>
-</nav>
+<div class="nav-pullup" id="navPullup">
+  <button class="nav-handle" id="navHandle" type="button" aria-expanded="false" aria-controls="siteNav"><span class="handle-arrow">⌃</span><span>MENU</span></button>
+  <nav class="taskbar" id="siteNav" aria-label="Website navigation">
+    <a href="#home">⌂<span>Home</span></a><a href="#services">✦<span>Services</span></a><a href="#packages">▣<span>Packages</span></a><a href="#our-works">📸<span>Our Works</span></a><a href="offers.html">🎁<span>Offers</span></a><a href="#reviews">★<span>Reviews</span></a><a href="#contact">☎<span>Contact</span></a>
+  </nav>
+</div>
 
 <script>
 (function () {
@@ -204,5 +201,8 @@
 })();
 </script>
 
+<script>
+(function(){const p=document.getElementById('navPullup'),h=document.getElementById('navHandle'),n=document.getElementById('siteNav');if(!p||!h||!n)return;function close(){p.classList.remove('open');h.setAttribute('aria-expanded','false');h.querySelector('.handle-arrow').textContent='⌃'}h.addEventListener('click',function(){const o=p.classList.toggle('open');h.setAttribute('aria-expanded',String(o));h.querySelector('.handle-arrow').textContent=o?'⌄':'⌃'});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('click',e=>{if(!p.contains(e.target))close()})})();
+</script>
 </body>
 </html>

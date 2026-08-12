@@ -57,5 +57,8 @@
   <a href="index.html#contact">☎<span>Contact</span></a>
 </nav>
 
+<script>
+(function(){const p=document.getElementById('navPullup'),h=document.getElementById('navHandle'),n=document.getElementById('siteNav');if(!p||!h||!n)return;function close(){p.classList.remove('open');h.setAttribute('aria-expanded','false');h.querySelector('.handle-arrow').textContent='⌃'}h.addEventListener('click',function(){const o=p.classList.toggle('open');h.setAttribute('aria-expanded',String(o));h.querySelector('.handle-arrow').textContent=o?'⌄':'⌃'});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('click',e=>{if(!p.contains(e.target))close()})})();
+</script>
 </body>
 </html>
